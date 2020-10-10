@@ -10,7 +10,7 @@ export const homeObjOne = {
     headLine: 'Lead Generation Specialist for Oneline Businesses', 
     lightText: true, 
     topLine: 'Marketing Agency',
-    img: '', 
+    img: require('../../images/svg-1.svg'), 
     alt: 'Image', 
     start: ''
 };
