@@ -80,7 +80,7 @@ const Footer = () => {
             </FooterLinksContainer>
             <SocialMedia>
                 <SocialMediaWrap>
-                    <SocialLogo to="/">
+                    <SocialLogo to="/" /*onClick={handleClick} click={click}*/>
                         <SocialIcon/>
                         ULTRA
                     </SocialLogo>
