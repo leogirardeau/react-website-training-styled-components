@@ -9,6 +9,8 @@ const Navbar = () => {
   const[button, setButton] = useState(true);
 
 const handleClick = () => setClick(!click);
+const closeMobileMenu = () => setClick(false)
+
 const showButton = () => {
   if(window.innerWidth <= 960) {
     setButton(false)
@@ -37,7 +39,7 @@ window.addEventListener('resize', showButton);
           </MobileIcon>
           <NavMenu onClick={handleClick} click={click}>
             <NavItem>
-              <NavLinks to='/'>
+              <NavLinks to='/' onCLick={closeMobileMenu}>
                 Home
               </NavLinks>
             </NavItem>
