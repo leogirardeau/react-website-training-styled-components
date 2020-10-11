@@ -6,31 +6,31 @@ import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon, NavMenu, NavItem, N
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
-  const[button, setButton] = useState(true);
+  const [button, setButton] = useState(true);
 
-const handleClick = () => setClick(!click);
-const closeMobileMenu = () => setClick(false)
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
-const showButton = () => {
-  if(window.innerWidth <= 960) {
-    setButton(false)
-  } else {
-    setButton(true)
-  }
-}
+  const showButton = () => {
+    if(window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
 
-useEffect(() => {
-  showButton();
-}, [])
+  useEffect(() => {
+    showButton();
+  }, []);
 
-window.addEventListener('resize', showButton);
+  window.addEventListener('resize', showButton);
 
   return (
     <>
     <IconContext.Provider value={{ color: '#fff' }}>
       <Nav>
         <NavbarContainer>
-          <NavLogo to="/">
+          <NavLogo to="/" onClick={closeMobileMenu} >
             <NavIcon />
             ULTRA
           </NavLogo>
@@ -39,7 +39,7 @@ window.addEventListener('resize', showButton);
           </MobileIcon>
           <NavMenu onClick={handleClick} click={click}>
             <NavItem>
-              <NavLinks to='/' onCLick={closeMobileMenu}>
+              <NavLinks to='/'>
                 Home
               </NavLinks>
             </NavItem>
